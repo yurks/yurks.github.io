@@ -1,0 +1,48 @@
+.C-common-dialog .wsk-dialog .header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 13px;
+}
+.C-common-dialog .wsk-dialog .content {
+    margin-top: 20px;
+}
+
+.ace-busy {
+    background: #fff;
+    opacity: 0.7;
+}
+
+.ace-field-wrapper {
+    margin: 0 1.0833333333333333333333333333333333333333%;
+    margin-bottom: 10px;
+}
+.ace-field-title,
+.ace-field-controls {
+    margin: 0 1.0833333333333333333333333333333333333333%;
+}
+
+.ace-field-select .ace-field {
+    margin-top: 0;
+    padding: 5px 5px 2px;
+}
+.ace-field-text .ace-field,
+.ace-field-textarea .ace-field {
+    height: 26px;
+    color: #333333;
+    padding: 0 10px;
+}
+.ace-validation-message {
+    margin: 3px 0 0px 3px;
+    font-size: 11px;
+    color: #d33f2a;
+}
+.ace-field-validation-error .ace-field {
+    border-color: #D33F21;
+}
+
+.ace-field-item {display: block; margin: 4px 0;}
+.ace-field-item-0 {margin-top: 5px;}
+.ace-field-item .ace-field {display: inline-block; float:left; margin: 1px 5px 0 0;}
+
+.ace-field-predefined { display: none;}
+
+.ace-form-actions { display: none;}
