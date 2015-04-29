@@ -28,6 +28,8 @@
                 url_source: 'product',
                 url_placeholder: submission.campaign,
 
+                url_addon: submission.addon,
+
                 // settings for results form
                 form: {
                     attach: 'auto', // try 'action' value also

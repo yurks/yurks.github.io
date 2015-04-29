@@ -11,6 +11,9 @@
     "Phone":"6668778888",
     "EmailAddress":"test@test.com",
     "StreetAddress":"Test Adress"
+  },
+  "addon": {
+     "SomeAddon": "Data"
   }
 
 }}
