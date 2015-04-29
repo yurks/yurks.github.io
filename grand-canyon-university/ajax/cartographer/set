@@ -9,7 +9,7 @@
     "PostalCode":"90210",
     "State":"CA",
     "Phone":"6668778888",
-    "EmailAddress":"test%40test.com",
+    "EmailAddress":"test@test.com",
     "StreetAddress":"Test Adress"
   }
 
