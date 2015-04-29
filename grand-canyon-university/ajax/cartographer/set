@@ -1,1 +1,16 @@
-{"errors":[], wsk:{"authkey": "9c08d5cc-3473-493d-a852-57909e2141a2", "campaign": "9c08d5cc-3473-493d-a852-57909e2141a2"}}
+{"errors":[], 
+"wsk":{
+  "authkey": "1fa47340-f969-4fa5-8287-41c5231de412",
+  "campaign": "7bdbff96-7336-45a7-b464-06c8354e8a15",
+  "values": {
+    "FirstName":"TestFirstName",
+    "LastName":"TestLastName",
+    "City":"TestCity",
+    "PostalCode":"90210",
+    "State":"CA",
+    "Phone":"6668778888",
+    "EmailAddress":"test%40test.com",
+    "StreetAddress":"Test Adress"
+  }
+
+}}

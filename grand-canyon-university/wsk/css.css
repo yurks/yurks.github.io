@@ -46,3 +46,6 @@
 .ace-field-predefined { display: none;}
 
 .ace-form-actions { display: none;}
+
+.ace-result > * { display: none;}
+.ace-result > .ace-form-container { display: block;}
