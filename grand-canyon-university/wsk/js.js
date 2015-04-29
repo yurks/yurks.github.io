@@ -14,28 +14,27 @@
                 parent = null;
             };
 
-            if (!submission.pubkey) {
+            if (!submission.authkey || !submission.campaign) {
                 finish();
                 return;
             }
 
             Wsk.context.ace('results', {
-                /*
-                 server will need to be changed to public.axdapi.com once you go live.
-                 Server can be passed as URL argument. I.E http://test.com?server=public.axdapi.com
-                 */
                 server: 'test.axdapi.com',
 
-                /*
-                 please update authkey with the one provided to you by an Account Manager. Testing and Production authkeys are different.
-                 AuthKey determines a product type as well as the type of flow.
-                 AuthKey can be passed as URL argument. I.E http://test.com?authkey=6eca3c93-d606-4e0c-8f1c-28ddc0f3ee22
-                 */
-                authkey: '1fa47340-f969-4fa5-8287-41c5231de412',
+                authkey: submission.authkey,
 
-                follow_session: submission.pubkey,
+                // tell plugin that we want to fetch one campaign directly
+                url_source: 'product',
+                url_placeholder: submission.campaign,
 
-                render: false
+                // settings for results form
+                form: {
+                    attach: 'auto', // try 'action' value also
+                    settings: {
+                        values: submission.values
+                    }
+                }
 
             }).on('ace-prepare', function(e, results) {
                 Wsk.customize(results);
@@ -43,28 +42,28 @@
             }).on('ace-error', function(e, results) {
                 finish();
 
-            }).on('ace-initialized', function(e, results) {
-                var school = results.getItem(0);
-                var form_url = school && school.getFormUrl();
-                if (form_url) {
-                    results.wrapper.ace('form', {
-                        url: form_url,
-submit: false // TODO: disable submission only for testing
+            }).on('ace-attached-form', function(e, results, customform) {
 
-                    })
-                        .on('ace-prepare', function(e, form) {
-                            Wsk.customize(form);
-                            if (parent) {
-                                parent.close();
-                                WskDialog.open(form, parent.submitted);
-                            }
+                customform.container.on('ace-initialized', function(e, customform) {
+                    customform.ace('zip', {
+                        field_zip: 'PostalCode',
+                        field_city: 'City',
+                        field_state: 'State',
+                        autofetch: 'if_visible'
+                    });
 
-                        }).on('ace-submitting', function(e, form) {
-                            WskDialog.close();
-                        });
-                } else {
-                    finish();
-                }
+
+                }).on('ace-prepare', function(e, form) {
+                    Wsk.customize(form);
+                    if (parent) {
+                        parent.close();
+                        WskDialog.open(form, parent.submitted);
+                    }
+
+                }).on('ace-submitting', function(e, form) {
+                    WskDialog.close();
+
+                });
             });
         },
 
