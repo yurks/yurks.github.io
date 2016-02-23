@@ -1,0 +1,215 @@
+/* Mega Menu Styles */
+ul.dnnmega {
+  list-style: none;
+  margin:0;
+  float: right;
+  padding: 0;
+}
+
+
+ul.dnnmega ul {
+    padding: 5px 0;
+	margin:0;
+}
+
+/*WAM - removed z-index*/
+.dnnmega .breadcrumb { background:none;}
+ul.dnnmega li{float:left;list-style: none none;position: relative;}
+
+ul.dnnmega li.root {
+    float: left;
+    list-style-type: none;
+    position: relative;
+    margin: 0 ;
+    padding: 0px;
+}
+
+ul.dnnmega li.root span {
+    padding: 0px 16px;
+    display: block;
+}
+
+
+
+ul.dnnmega li.root a {
+    display: block;
+    color: #333;
+    line-height: 85px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: raleway,open sans;
+    letter-spacing: 1px;
+}
+
+ul.dnnmega li.root a:hover { 
+	background: #117EC3; 
+	color:#fff; 
+	opacity:0.9;
+}
+
+ul.dnnmega li.mmItemHover a,
+ul.dnnmega li.mmItemHover a:hover{ 
+	background: #117EC3; 
+	color:#fff; 
+	opacity:0.9;
+}
+
+
+
+ul.dnnmega li .megaborder {
+    position: absolute;
+    left: -150px;
+    z-index: 1200;
+    float: left;
+    display: none;
+    background: none repeat scroll 0% 0% #31383E;
+	text-align:left;
+	min-height:180px;
+}
+
+ul.dnnmega li.mmLast .megaborder {
+    right: 0px;
+    left: inherit;
+}
+
+ul.dnnmega li:nth-last-child(2) .megaborder {
+    right: -100px;
+    left: inherit;
+}
+ul.dnnmega li:nth-last-child(3) .megaborder {
+    right: -150px;
+    left: inherit;
+}
+
+ul.dnnmega .megaborder .M {
+    display: block;
+    border-top: 0px none;
+    border-bottom: 0px none;
+    min-height: 135px;
+    padding: 10px 0 20px 10px;
+	margin:0;
+}
+
+
+/*--Sub nav heading style--*/
+ul.dnnmega .megaborder ul li.mmLast{background:none;}
+ul.dnnmega .megaborder ul li.mmRightColumn{background:none;}
+
+
+ul.dnnmega li.category {display:block;width:180px;float:left;}
+ul.dnnmega li.category a {
+    display: block;
+    padding: 10px 0px;
+    line-height: 1.5 !important;
+    border-bottom: 1px solid #3c454c;
+    margin: 0px 10px;
+	text-transform:capitalize;
+    background-color: transparent!important;
+	font-weight:400;
+	font-family:open sans;
+	letter-spacing:normal;
+}
+ul.dnnmega li.category li a {
+    border: medium none;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+	position:relative;
+}
+
+ul.dnnmega li.category li a span:before { content: "\f105"; font-family:FontAwesome; display:inline-block; font-size:14px; position:absolute; left:0; vertical-align:top;}
+ul.dnnmega li.category a span {
+    display: block;
+    color: #999;
+    padding: 0px;
+}
+
+ul.dnnmega li.category a:hover span{color:#117EC3;}
+
+
+ul.dnnmega li.category li.leaf, ul.dnnmega li.category li.mmLast {
+    clear: left;
+    float: none;
+    position: static;
+    padding: 0px 0px 0px 15px;
+}
+
+ul.dnnmega li.category li.leaf a span{font-size:12px;line-height:26px;border:0;}
+
+ul.dnnmega img.mmIcon {max-height: 24px; margin-right: 5px; vertical-align: middle;}
+ul.dnnmega li.root > a > span img.mmIcon {height: 16px;}
+
+/*---selected---*/
+.dnnmega li.selected a {
+    color: #117EC3;
+    border-top: 3px solid #117EC3;
+}
+ 
+.dnnmega li.selected .subLevel li a{
+	border:none;
+}
+
+.dnnmega li.selected .subLevel li a{
+	border:none;
+}
+
+ul.dnnmega li.mmSelected li a span{ color:#888;}
+
+ul.dnnmega .megaborder li.mmSelected a span{ color:#117EC3;}
+ul.dnnmega .megaborder li.mmSelected li a span{ color:#888;}
+ul.dnnmega .megaborder li.mmSelected li a span:hover { color:#117EC3;}
+/*---Current---*/
+.dnnmega .root.mmBreadcrumb a {
+    background-color: #117EC3;
+    color: #FFF;
+}
+.dnnmega .root.mmBreadcrumb li a { border-top:none;}
+/*---isStuck---*/
+.isStuck ul.dnnmega li.root a {line-height: 60px; }
+.isStuck .dnnmega .root.mmBreadcrumb li a { line-height:inherit;}
+.isStuck ul.dnnmega li.category a{ line-height:inherit;}
+.isStuck ul.dnnmega { margin:0;}
+
+/*---lampback---*/
+.dnnmega li.lampback {
+    position: absolute;
+    top: 0px;
+    z-index: 8;
+    border-top: 3px solid #117EC3;
+    margin: 0px;
+}
+
+
+@media handheld, only screen and (max-width:1100px) {
+ul.dnnmega li.root span{
+  padding: 0px 15px;
+}
+}
+@media handheld, only screen and (max-width:1000px) {
+ul.dnnmega li.root a { line-height:75px;}
+ul.dnnmega {
+  display: inline-block;
+  float: none;
+  vertical-align:middle;
+}
+
+ul.dnnmega li.root span{
+  padding: 0px 10px;
+}
+}
+@media handheld, only screen and (max-width:900px) {
+ul.dnnmega li.root a {
+  line-height: 65px;
+}
+ul.dnnmega li.root span {
+  padding: 0px 15px;
+}
+}
+@media handheld, only screen and (max-width:767px) {
+ul.dnnmega li.root span {
+  padding: 0px 15px;
+  display: block;
+}
+}
+
