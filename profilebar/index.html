@@ -259,7 +259,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
             server: "test",
             suppress_form_tags: true,
             _silent: true,
-            follow_session: window.location.search === '?results' ? "997caa5b-0da6-4641-9b45-b872fb7dfd5a" : null,
+            follow_session: window.location.search.indexOf('?results') === 0 ? "997caa5b-0da6-4641-9b45-b872fb7dfd5a" : null,
             //follow_session: '547fbb39-c3a6-4598-a959-6b7e79610889',
             store_url: "/DesktopModules/WskForm/API/Persist/PublicKey/{pubkey}",
             url_addon: {p: ""}
@@ -316,12 +316,17 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
         }, {
             //results_settings
             context: "#dnn_ctr415_View_results",
-            pagerShow: true,
-            pagerEnabled: true,
-            pagerCycle: true,
+            app_results_type_labels: {
+                'Coursetalk': 'These online courses might help you refresh your education',
+                'CollegePrep': 'Start a custom <b>college prep</b> program and earn college credits',
+                'CommunityCollege': 'Take your credits to a <b>community college</b> program',
+                'Post-Secondary Education Request': "Move to a <b>Bachelor's degree program</b>"
+            },
+            app_results_title: '<b>Your Plan</b> to become a %FutureGoal%',
+
             form: {
                 message_submitted: "<h2>Submitted!</h2>",
-                attach: "action",
+                //attach: "action",
                 // try 'auto' value also
                 // here is custom form instance settings.
                 settings: {
