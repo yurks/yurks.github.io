@@ -8,12 +8,12 @@
 	Profile
 </title><meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN"><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"><link href="assets/default.css" media="all" type="text/css" rel="stylesheet"><link href="assets/SearchSkinObjectPreview.css" media="all" type="text/css" rel="stylesheet">
 
+    <link href="profile.css" media="all" type="text/css" rel="stylesheet">
 
     <link href="assets/skin.css" media="all" type="text/css" rel="stylesheet"><link href="assets/container.css" media="all" type="text/css" rel="stylesheet"><link href="assets/portal.css" media="all" type="text/css" rel="stylesheet"><link href="assets/StandardMenu.css" media="all" type="text/css" rel="stylesheet"><link href="assets/jquery_002.css" media="all" type="text/css" rel="stylesheet"><link href="assets/dnnmega.css" media="all" type="text/css" rel="stylesheet"><script src="assets/jquery.js" type="text/javascript"></script><script src="assets/jquery-migrate.js" type="text/javascript"></script><script src="assets/jquery-ui.js" type="text/javascript"></script><!--[if LT IE 9]><link id="IE8Minus" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/BD007-Blue/css/ie8style.css" /><![endif]--><link rel="stylesheet" type="text/css" href="assets/jquery.css"><style type="text/css">
 	.treeview li { list-style-type: none }
 </style>
 
-    <link href="profile.css" media="all" type="text/css" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=2.0"></head>
@@ -246,8 +246,16 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
 
     <div id="dnn_ctr415_ContentPane" class="contentpane"><!-- Start_Module_415 --><div id="dnn_ctr415_ModuleContent" class="DNNModuleContent ModWskFormC">
 
-<div id="dnn_ctr415_View_form" class="container profile-bar"></div>
-<div id="dnn_ctr415_View_results" class="container profile-results"></div>
+        <div class="profile-bar">
+            <div id="dnn_ctr415_View_form" class="container"></div>
+        </div>
+        <div class="profile-results">
+            <div id="dnn_ctr415_View_results" class="container"></div>
+        </div>
+
+
+
+
 
 <script type="text/javascript">
 
@@ -259,8 +267,8 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
             server: "test",
             suppress_form_tags: true,
             _silent: true,
-            //follow_session: window.location.search.indexOf('?results') === 0 ? "997caa5b-0da6-4641-9b45-b872fb7dfd5a" : null,
-            follow_session: '547fbb39-c3a6-4598-a959-6b7e79610889',
+            follow_session: window.location.search.indexOf('?results') === 0 ? "997caa5b-0da6-4641-9b45-b872fb7dfd5a" : null,
+            //follow_session: '547fbb39-c3a6-4598-a959-6b7e79610889',
             store_url: "/DesktopModules/WskForm/API/Persist/PublicKey/{pubkey}",
             url_addon: {p: ""}
         }, {
