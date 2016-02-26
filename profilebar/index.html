@@ -255,14 +255,14 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
 <script type="text/javascript">
 
     (function (e) {
-        var title_newline = '</label><label class="profile-newline"></label><label class="ace-field-title">';
+        var title_newline = '</label> <label class="profile-newline"></label><label class="ace-field-title">';
         e.AceProfile({
             //defaults
             authkey: "907242c6-87a4-41f5-b2c1-8a1508defdde",
             server: "test",
             suppress_form_tags: true,
             _silent: true,
-            follow_session: window.location.search.indexOf('?results') === 0 ? "801df101-f197-4617-8133-a647655a6b95" : null,
+            follow_session: window.location.search.indexOf('?results') === 0 ? "75b2ac82-4741-4efe-8851-8965ef7b6c99" : null,
             //follow_session: '547fbb39-c3a6-4598-a959-6b7e79610889',
             store_url: "/DesktopModules/WskForm/API/Persist/PublicKey/{pubkey}",
             url_addon: {p: ""}
@@ -274,16 +274,19 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
                 CurrentStatus: {
                     label: "I am a",
                     placeholder: "Current Job/Status",
-                    typeahead: true
+                    typeahead: true,
+                    summary: true
                 },
                 CareerObjective: {
                     label: 'looking to'+title_newline,
-                    preselect: "first"
+                    preselect: "first",
+                    summary: true
                 },
                 FutureGoal: {
                     label: 'and become a'+title_newline,
                     placeholder: "Future Goal",
-                    typeahead: true
+                    typeahead: true,
+                    summary: true
                 },
                 HighestLevelOfEducation: {
                     label: 'My highest Level of education'+title_newline+'is',
@@ -309,7 +312,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
                 }
             },
             pages: [{
-                label: '<b><i class="fa fa-user"></i>Your Goal</b>Complete your profile below and see the career <span class="profile-newline"></span>plan that matches your interest.',
+                label: '<b>Your Goal</b><strong>Complete your profile below and see the career <span class="profile-newline"></span>plan that matches your interest.</strong>',
                 fields: ["CurrentStatus", "typeahead:CurrentStatus", "CareerObjective", "FutureGoal", "typeahead:FutureGoal", "EducationGoal"]
             }, {
                 fields: ["HighestLevelOfEducation", "HighSchoolGraduationYear", "Zip"]
@@ -324,9 +327,9 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
             //results_settings
             context: "#dnn_ctr415_View_results",
             app_results_type_labels: {
-                'Coursetalk': 'These online <b>courses</b> might help you refresh your education',
-                'CollegePrep': 'Start a custom <b>college prep</b> program and earn college credits',
-                'CommunityCollege': 'Take your credits to a <b>community college</b> program',
+                'CourseTalk Bundle': 'These online <b>courses</b> might help you refresh your education',
+                'CourseTalk Course': 'Start a custom <b>college prep</b> program and earn college credits',
+                'Traditional College Request': 'Take your credits to a <b>community college</b> program',
                 'Post-Secondary Education Request': "Move to a <b>Bachelor's degree program</b>"
             },
             app_results_title: '<b>Your Plan</b> to become a %FutureGoal%',
