@@ -312,7 +312,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
                 }
             },
             pages: [{
-                label: '<b>Your Goal</b><strong>Complete your profile below and see the career <span class="profile-newline"></span>plan that matches your interest.</strong>',
+                label: '<b>Your Goal</b><em>Complete your profile below and see the career <span class="profile-newline"></span>plan that matches your interest.</em><strong>Edit your goal below.</strong>',
                 fields: ["CurrentStatus", "typeahead:CurrentStatus", "CareerObjective", "FutureGoal", "typeahead:FutureGoal", "EducationGoal"]
             }, {
                 fields: ["HighestLevelOfEducation", "HighSchoolGraduationYear", "Zip"]
@@ -322,7 +322,8 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
             }, {
                 fields: "auto-skip"
             }],
-            label_submit: 'Complete all to see results'
+            busy_message_submit: '<em>Planning...</em><strong>Submitting...</strong>',
+            label_submit: '<em>Complete all to see results</em><strong>See your results</strong>'
         }, {
             //results_settings
             context: "#dnn_ctr415_View_results",
