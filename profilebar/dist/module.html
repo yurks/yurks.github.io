@@ -1,0 +1,132 @@
+<div class="profile-page-logo-area">
+    <div class="container">
+        <h1 class="profile-page-logo"><a>career<b>jell</b></a></h1>
+    </div>
+</div>
+
+<div class="profile-page-header">
+    <div class="container">
+        Firm up your career.
+    </div>
+</div>
+
+<div class="profile-bar">
+    <div id="dnn_ctr415_View_form" class="container"></div>
+</div>
+<div class="profile-results">
+    <div id="dnn_ctr415_View_results" class="container"></div>
+</div>
+
+<script>
+    (function (e) {
+        var title_newline = '</label> <label class="profile-newline"></label><label class="ace-field-title">';
+        e.AceProfile({
+            //defaults
+            authkey: "907242c6-87a4-41f5-b2c1-8a1508defdde",
+            server: "test",
+            suppress_form_tags: true,
+            _silent: true,
+            follow_session: window.location.search.indexOf('?results') === 0 ? "5cdc81e3-bcad-487b-a02e-861134dbbdda" : null,
+            //follow_session: '547fbb39-c3a6-4598-a959-6b7e79610889',
+            store_url: "/DesktopModules/WskForm/API/Persist/PublicKey/{pubkey}",
+            url_addon: {p: ""},
+            mixpanel: "7d7997b8dd94b708b844eb4fade45b26"
+        }, {
+            //form_settings
+            context: "#dnn_ctr415_View_form",
+            classname: 'profile',
+            fields: {
+                CurrentStatus: {
+                    label: "I am a",
+                    placeholder: "Current Job/Status",
+                    typeahead: true,
+                    summary: true
+                },
+                CareerObjective: {
+                    label: 'looking to'+title_newline,
+                    preselect: "first",
+                    summary: true
+                },
+                FutureGoal: {
+                    label: 'and become a'+title_newline,
+                    placeholder: "Future Goal",
+                    typeahead: true,
+                    summary: true
+                },
+                HighestLevelOfEducation: {
+                    summary: false,
+                    label: 'My highest Level of education'+title_newline+'is',
+                    placeholder: 'Education Level '
+                },
+                Zip: {
+                    label: 'and I live'+title_newline+'the',
+                    placeholder: 'Zip Code'
+                },
+                HighSchoolGraduationYear: {
+                    label: 'I completed'+title_newline+'High School in',
+                    required: true,
+                    preselect: 'eq:10',
+                    placeholder: ' '
+                },
+                DegreeLevel: {
+                    field_type: 'Checkbox',
+                    preselect: 'all',
+                    progress_exclude: true
+                },
+                Concentration: {
+                    field_type: 'Checkbox',
+                    preselect: 'all',
+                    progress_exclude: true
+                }
+            },
+            progress: true,
+            pages: [{
+                label: '<b>Your Goal</b><em>Complete your profile below and see the career <span class="profile-newline"></span>plan that matches your interest.</em><strong>Edit your goal below.</strong>',
+                fields: ["CurrentStatus", "typeahead:CurrentStatus", "CareerObjective", "FutureGoal", "typeahead:FutureGoal", "EducationGoal"]
+            }, {
+                fields: ["HighestLevelOfEducation", "HighSchoolGraduationYear", "Zip"]
+            }, {
+                classname: 'hidden-page',
+                fields: ["DegreeLevel", "Concentration"]
+            }, {
+                fields: "auto-skip"
+            }],
+            busy_message_submit: '<em>Planning...</em><strong>Submitting...</strong>',
+            label_submit: '<em>Complete all to see results</em><strong>See your results</strong>'
+        }, {
+            //results_settings
+            context: "#dnn_ctr415_View_results",
+            app_results_type_labels: {
+                'CourseTalk Bundle': 'These online <b>courses</b> might help you refresh your education',
+                'CourseTalk Course': 'Start a custom <b>college prep</b> program and earn college credits',
+                'Traditional College Request': 'Take your credits to a <b>community college</b> program',
+                'Post-Secondary Education Request': "Move to a <b>%FutureEduLevel% program</b>"
+            },
+            app_results_title: '<b>Your Plan</b> to become a %FutureGoal%',
+
+            app_results_empty: 'We are not able to find any results your desired goal at this time but we are building our data base every day.',
+            app_results_empty_action_label: 'Click here to try another search',
+
+            info_more_label: 'Read more <i class="fa fa-angle-double-down"></i>',
+
+            form: {
+                message_submitted: "<h2>Submitted!</h2>",
+                attach: "action",
+                action_label: '<i class="fa fa-arrow-circle-right"></i>',
+                // try 'auto' value also
+                // here is custom form instance settings.
+                settings: {
+                    // Hide predefined fields, which was submitted with primary form,
+                    // or pre-populated with form settings.
+                    hide_predefined: true,
+                    label_submit: '<em>Complete all to continue</em><strong>Submit</strong>',
+                    pages: [{
+                        label: 'Fill out all information to start!',
+                        fields: "auto"
+                    }],
+                    progress: true
+                }
+            }
+        });
+    })(window);
+</script>

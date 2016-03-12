@@ -8,9 +8,10 @@
 	Profile
 </title><meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN"><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"><link href="assets/default.css" media="all" type="text/css" rel="stylesheet"><link href="assets/SearchSkinObjectPreview.css" media="all" type="text/css" rel="stylesheet">
 
-    <link href="module.css" media="all" type="text/css" rel="stylesheet">
+    <link href="dist/module.css" media="all" type="text/css" rel="stylesheet">
 
-    <link href="assets/skin.css" media="all" type="text/css" rel="stylesheet"><link href="assets/container.css" media="all" type="text/css" rel="stylesheet"><link href="assets/portal.css" media="all" type="text/css" rel="stylesheet"><link href="assets/StandardMenu.css" media="all" type="text/css" rel="stylesheet"><link href="assets/jquery_002.css" media="all" type="text/css" rel="stylesheet"><link href="assets/dnnmega.css" media="all" type="text/css" rel="stylesheet"><script src="assets/jquery.js" type="text/javascript"></script><script src="assets/jquery-migrate.js" type="text/javascript"></script><script src="assets/jquery-ui.js" type="text/javascript"></script><!--[if LT IE 9]><link id="IE8Minus" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/BD007-Blue/css/ie8style.css" /><![endif]--><link rel="stylesheet" type="text/css" href="assets/jquery.css"><style type="text/css">
+    <link href="assets/skin.css" media="all" type="text/css" rel="stylesheet"><link href="assets/container.css" media="all" type="text/css" rel="stylesheet"><link href="assets/portal.css" media="all" type="text/css" rel="stylesheet"><link href="assets/StandardMenu.css" media="all" type="text/css" rel="stylesheet"><link href="assets/jquery_002.css" media="all" type="text/css" rel="stylesheet"><link href="assets/dnnmega.css" media="all" type="text/css" rel="stylesheet"><script src="assets/jquery.js" type="text/javascript"></script>
+    <script src="assets/jquery-migrate.js" type="text/javascript"></script><script src="assets/jquery-ui.js" type="text/javascript"></script><!--[if LT IE 9]><link id="IE8Minus" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/BD007-Blue/css/ie8style.css" /><![endif]--><link rel="stylesheet" type="text/css" href="assets/jquery.css"><style type="text/css">
 	.treeview li { list-style-type: none }
 </style>
 
@@ -50,7 +51,7 @@ function __doPostBack(eventTarget, eventArgument) {
 <script type="text/javascript">if (!(window.jQuery && window.jQuery.fn && window.jQuery.fn.treeview)) document.write(unescape('%3Cscript src="assets/TreeView/jquery.treeview.js" type="text/javascript"%3E%3C/script%3E'));</script><script src="assets/jquery_005.js" type="text/javascript"></script>
 <script src="assets/Telerik.js" type="text/javascript"></script>
 <script src="//cdn.axdapi.com/wsk/client-dev.js" type="text/javascript"></script>
-<script src="module.js" type="text/javascript"></script>
+<script src="dist/module.js" type="text/javascript"></script>
 
 <div class="aspNetHidden">
 
@@ -232,133 +233,9 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [],
 
     <div id="dnn_ctr415_ContentPane" class="contentpane"><!-- Start_Module_415 --><div id="dnn_ctr415_ModuleContent" class="DNNModuleContent ModWskFormC">
 
-        <div class="profile-page-logo-area">
-            <div class="container">
-                <h1 class="profile-page-logo"><a>career<b>jell</b></a></h1>
-            </div>
-        </div>
-
-        <div class="profile-page-header">
-            <div class="container">
-                Firm up your career.
-            </div>
-        </div>
-
-        <div class="profile-bar">
-            <div id="dnn_ctr415_View_form" class="container"></div>
-        </div>
-        <div class="profile-results">
-            <div id="dnn_ctr415_View_results" class="container"></div>
-        </div>
-
-
-<script type="text/javascript">
-
-    (function (e) {
-        var title_newline = '</label> <label class="profile-newline"></label><label class="ace-field-title">';
-        e.AceProfile({
-            //defaults
-            authkey: "907242c6-87a4-41f5-b2c1-8a1508defdde",
-            server: "test",
-            suppress_form_tags: true,
-            _silent: true,
-            follow_session: window.location.search.indexOf('?results') === 0 ? "75b2ac82-4741-4efe-8851-8965ef7b6c99" : null,
-            //follow_session: '547fbb39-c3a6-4598-a959-6b7e79610889',
-            store_url: "/DesktopModules/WskForm/API/Persist/PublicKey/{pubkey}",
-            url_addon: {p: ""}
-        }, {
-            //form_settings
-            context: "#dnn_ctr415_View_form",
-            classname: 'profile',
-            fields: {
-                CurrentStatus: {
-                    label: "I am a",
-                    placeholder: "Current Job/Status",
-                    typeahead: true,
-                    summary: true
-                },
-                CareerObjective: {
-                    label: 'looking to'+title_newline,
-                    preselect: "first",
-                    summary: true
-                },
-                FutureGoal: {
-                    label: 'and become a'+title_newline,
-                    placeholder: "Future Goal",
-                    typeahead: true,
-                    summary: true
-                },
-                HighestLevelOfEducation: {
-                    label: 'My highest Level of education'+title_newline+'is',
-                    placeholder: 'Education Level '
-                },
-                Zip: {
-                    label: 'and I live'+title_newline+'the',
-                    placeholder: 'Zip Code'
-                },
-                HighSchoolGraduationYear: {
-                    label: 'I completed'+title_newline+'High School in',
-                    required: true,
-                    preselect: 'eq:10',
-                    placeholder: ' '
-                },
-                DegreeLevel: {
-                    field_type: 'Checkbox',
-                    preselect: 'all'
-                },
-                Concentration: {
-                    field_type: 'Checkbox',
-                    preselect: 'all'
-                }
-            },
-            pages: [{
-                label: '<b>Your Goal</b><em>Complete your profile below and see the career <span class="profile-newline"></span>plan that matches your interest.</em><strong>Edit your goal below.</strong>',
-                fields: ["CurrentStatus", "typeahead:CurrentStatus", "CareerObjective", "FutureGoal", "typeahead:FutureGoal", "EducationGoal"]
-            }, {
-                fields: ["HighestLevelOfEducation", "HighSchoolGraduationYear", "Zip"]
-            }, {
-                classname: 'hidden-page',
-                fields: ["DegreeLevel", "Concentration"]
-            }, {
-                fields: "auto-skip"
-            }],
-            busy_message_submit: '<em>Planning...</em><strong>Submitting...</strong>',
-            label_submit: '<em>Complete all to see results</em><strong>See your results</strong>'
-        }, {
-            //results_settings
-            context: "#dnn_ctr415_View_results",
-            app_results_type_labels: {
-                'CourseTalk Bundle': 'These online <b>courses</b> might help you refresh your education',
-                'CourseTalk Course': 'Start a custom <b>college prep</b> program and earn college credits',
-                'Traditional College Request': 'Take your credits to a <b>community college</b> program',
-                'Post-Secondary Education Request': "Move to a <b>Bachelor's degree program</b>"
-            },
-            app_results_title: '<b>Your Plan</b> to become a %FutureGoal%',
-
-            app_results_empty: 'We are not able to find any results your desired goal at this time but we are building our data base every day.',
-            app_results_empty_action_label: 'Click here to try another search',
-
-            form: {
-                message_submitted: "<h2>Submitted!</h2>",
-                attach: "action",
-                action_label: '<i class="fa fa-arrow-circle-right"></i>',
-                // try 'auto' value also
-                // here is custom form instance settings.
-                settings: {
-                    // Hide predefined fields, which was submitted with primary form,
-                    // or pre-populated with form settings.
-                    //hide_predefined: true,
-                    label_submit: 'Complete all to continue',
-                    pages: [{
-                        label: 'Fill out all information to start!',
-                        fields: "auto"
-                    }]
-                }
-            }
-        });
-    })(this);
-</script>
-
+        <script>
+            $( "#dnn_ctr415_ModuleContent" ).load( "dist/module.html" );
+        </script>
 
 </div><!-- End_Module_415 --></div>
      <div class="c_footer">
