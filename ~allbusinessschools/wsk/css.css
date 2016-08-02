@@ -1,0 +1,25 @@
+.axd-only-school-program {
+    background-color: #c1ffab;
+}
+.asd-and-axd-school-program {
+    background-color: #c2eefc;
+}
+
+.ace-field-title,
+.ace-field-item-label {
+    font-family: arial,sans-serif;
+    font-size: 12px;
+}
+.ace-form-page {
+    width: 50%;
+    float: left;
+}
+.ace-form-page-auto .ace-field-wrapper {
+    margin-right: 15px;
+}
+.ace-required {
+    color: red;
+}
+.ace-validation-message {
+    padding: 25px 0 0 0!important;
+}
