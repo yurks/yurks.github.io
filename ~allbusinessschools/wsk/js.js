@@ -1,7 +1,12 @@
 ;(function(window) {
     'use strict';
 
-    window.axdStart = function(submission) {
+    window.axdStart = function(submission, showDescriptionOnly) {
+
+        var context = document.getElementById('wsk-context');
+        if (context) {
+            context.innerHTML = '';
+        }
 
         Ace('product', {
             _silent: true,
@@ -16,7 +21,7 @@
 
             // settings for results form
             form: {
-                attach: 'auto', // try 'action' value also
+                attach: showDescriptionOnly ? 'manual' : 'auto', // try 'action' value also
                 settings: {
                     values: submission.values,
                     suppress_form_tags: true,
@@ -45,7 +50,7 @@
         on('ace-item-prepare', function(e, results, item) {
             item.renderContent = function() {
                 var item = this;
-                return '<h2>' + item.getName() + '</h2>';
+                return '<h2>' + item.getName() + '</h2>' + (showDescriptionOnly ? item.getLogo(true) + item.getDescription(true) : '');
             }
         }).
 
