@@ -33,3 +33,7 @@
     float: none!important;
     margin:0!important;
 }
+
+.ace-field-value {
+    color: black;
+}
