@@ -1,0 +1,39 @@
+.axd-only-school-program {
+    background-color: #c1ffab;
+}
+.asd-and-axd-school-program {
+    background-color: #c2eefc;
+}
+
+.ace-field-title,
+.ace-field-item-label {
+    font-family: arial,sans-serif;
+    font-size: 12px;
+}
+.ace-form-page {
+    width: 50%;
+    float: left;
+}
+.ace-form-page-auto .ace-field-wrapper {
+    margin-right: 15px;
+}
+.ace-required {
+    color: red;
+}
+.ace-validation-message {
+    margin: 5px 0 0 0!important;
+}
+
+.ace-field-item {
+    display: inline-block;
+    margin: 2px 10px 0 0!important;
+}
+
+.ace-field-item .ace-control {
+    float: none!important;
+    margin:0!important;
+}
+
+.ace-field-value {
+    color: black;
+}
