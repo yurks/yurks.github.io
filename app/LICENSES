@@ -36,22 +36,13 @@ object-assign
  */
 
 /*!
- * vue-no-ssr v1.0.0
- * (c) 2018-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
-
-/*!
  * Quasar Framework v0.17.19
  * (c) 2016-present Razvan Stoenescu
  * Released under the MIT License.
  */
 
 /*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
- * @license  MIT
+ * vue-no-ssr v1.0.0
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
  */
-
-/*! https://mths.be/utf8js v2.1.2 by @mathias */
