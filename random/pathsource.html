@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" ;content="IE=edge, chrome=1">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Receive Program Information</title>
+ <link href="https://dhecf6guuxkn.cloudfront.net/assets/online_enrollment/common-4ddb79cbf92104540c43ec1dd98a9201.css" media="all" rel="stylesheet" />
+  <script src="https://d2p4j4z3o7qb9t.cloudfront.net/wsk/2.2.25/client.js"></script>
+</head>
+<body>
+<div id="app">
+
+</div>
+
+<style>
+  .ace-result {
+    margin: 0;
+  }
+  .ace-form-container,
+  .ace-form-wrapper,
+  .ace-results-container,
+  .ace-results-wrapper,
+  .ace-result {
+    height: 100%;
+  }
+
+  .ace-form-actions {
+    left: 0;
+  }
+  .ace-action-form-submit {
+    width: 100%;
+  }
+
+  .ace-field-validation-error .ace-field-title {
+    color: #9f3a38;
+  }
+
+  .ace-field-validation-error .ace-control {
+    border-color: #e0b4b4!important;
+    color: #9f3a38!important;
+    background-color: #fff6f6!important;
+  }
+
+  .ace-validation-message {
+    white-space: normal;
+    background: #ffffff;
+    border: 1px solid #e0b4b4;
+    color: #9f3a38;
+    position: relative;
+    border-radius: 0.28571429rem;
+    font-weight: bold;
+    padding: 0.5833em 0.833em;
+    margin: 1em 0.14285714em 0;
+    vertical-align: baseline;
+    line-height: 1;
+    font-size: 0.85714286rem;
+  }
+  .ace-validation-message:before {
+    background-color: inherit;
+    border: inherit;
+    content: '';
+    z-index: 2;
+    width: 0.6666em;
+    height: 0.6666em;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    top: 0%;
+    left: 50%;
+    border-width: 1px 0px 0px 1px;
+    margin-top: -1px;
+
+  }
+
+  .ace-field-validation-error .ace-validation-message {
+    display: inline-block;
+  }
+
+  .ace-field-title {
+    display: block;
+    margin: 0em 0em 0.28571429rem 0em;
+    color: rgba(0,0,0,0.87);
+    font-size: 0.92857143em;
+    font-weight: bold;
+    text-transform: none;
+  }
+  .ace-required {
+    margin: -0.2em 0em 0em 0.2em;
+    color: #db2828;
+  }
+
+  .ace-field-wrapper {
+    margin: 0;
+    padding-top: 15px;
+  }
+  .ace-field-item {
+    margin-left: 17px;
+    display: block;
+  }
+  .ace-field-item .ace-control {
+    margin-left: -18px;
+    margin-top: 3px;
+    margin-right: 3px
+  }
+
+  .ace-control-select {
+    height: 38px!important;
+    line-height: 30px!important;
+    padding: 0.5em!important;
+  }
+  .ace-busy {
+    background: white;
+  }
+
+  .school-description {
+    margin: 2em 0 1em;
+  }
+
+  .school-description-expander {
+    position: relative;
+    top: -20px;
+    display: none;
+    left: 50%;
+    margin-left: -43px;
+  }
+  /*
+  .school-description-expander:after {
+  .icon-after(@fa-var-angle-double-down);
+  }*/
+  .school-description-expander:hover {
+    cursor: pointer;
+  }
+
+
+
+  .school-description {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .school-description-expanded .school-description {
+    max-height: 4000px;
+    transition: max-height 3s ease 0s;
+  }
+  .school-description-expander {
+    display: inline-block;
+  }
+
+  .school-description-expanded .school-description-expander { display: none;}
+
+  .school-description-expanded .school-description:after {
+    display: none;
+  }
+
+</style>
+<script>
+//<![CDATA[
+window.gon={};gon.sc_id="8b715f93-3068-43d4-baee-c21882c39802";gon.next_url="/schools/thanks";gon.submit_url="/schools";
+//]]>
+</script>
+<script type="text/javascript">
+    !function () {
+
+        Ace.el('#app').ace('product', {
+            // Please changed to 'public' once you go LIVE.
+            server: 'public',
+            // Please update with the AuthKey provided to you by an Account Manager.
+            authkey: '62792641-3174-433e-8787-c0fe7c7b2fc0',
+
+
+            id: window.gon.sc_id,
+
+            // follow_session: SESSION_ID || false,
+
+            pagerShow: false,
+            form: {
+                // try 'action' value also
+                attach: 'auto',
+                // message to display when form was successfully submitted.
+                message_submitted: 'Submitted!',
+
+                settings: {
+                    // Hide predefined fields, which was submitted with primary form,
+                    // or pre-populated with form settings.
+                    hide_predefined: true,
+                    label_submit: 'Request Information'
+                }
+            }
+
+        }).on('ace-item-prepare', function (e, results, result) {
+            result.renderContent = function() {
+                return '<div id="item-header"></div>'
+            }
+
+        }).on('ace-attached-form', function (e, results, form, result) {
+
+            form.on('ace-submitted', function (e, form) {
+                if (window.gon.next_url) {
+                    window.location = window.gon.next_url;
+                }
+            });
+
+            form.on('ace-initialized', function (e, form) {
+
+                var diploma;
+                var fields = form.field.all();
+                for (var i = 0; i < fields.length; i++) {
+
+                    if (fields[i].principal === true) {
+                        diploma = fields[i].options && fields[i].options[0] && fields[i].options[0].label
+                        break;
+                    }
+                }
+
+                var header = '<header class="ps-form-header"><div class="program-name">' + (diploma || '') + '</div><div class="school-name">' + result.getName() + '</div></header>';
+                results.dom.html(header, results.dom.get('#item-header'))
+
+
+                var formPage = form.dom.get('.ace-form-page', form.wrpr);
+                var formActions = form.dom.get('.ace-form-actions', form.cntnr);
+
+                form.dom.classname.add('ps-form-container ui form', form.cntnr)
+                form.dom.classname.add('ui container', formPage)
+
+                form.dom.append(formActions, form.wrpr)
+                
+
+                form.dom.classname.add('ui segment ps-btn-container ps-show big buttons', formActions)
+                form.dom.classname.add('ui positive button', form.dom.get('.ace-action-form-submit', formActions))
+
+                var desc = result.getDescription();
+                desc = desc && desc.trim();
+                if (desc) {
+                    form.dom.prepend(form.dom.make('<div><div class="school-description">' + desc + '</div><a class="school-description-expander" onclick="this.parentNode.className += \' school-description-expanded\'" title="Open School Description">School Description...</a></div>'), formPage)
+                }
+
+
+            });
+        });
+
+    }();
+
+</script>
+
+</body>
+</html>
