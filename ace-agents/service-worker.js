@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.157bcbe9e304f7301107dba1a84b7db8.js"
+  "precache-manifest.eb304340db5e9c98506aaec594d946ae.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ace-agents"});
