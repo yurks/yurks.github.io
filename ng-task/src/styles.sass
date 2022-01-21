@@ -1,0 +1,89 @@
+$accent-color: #1976d2
+:root
+  --font-size: 14px
+  --font-color: #333
+  --accent-color: #{$accent-color}
+  --error-color: #c20016
+
+$loader-color: $accent-color
+@import "~scss-spinners/components/_loader.scss"
+
+.loading
+  display: flex
+  flex-direction: column
+  overflow: hidden
+
+  &:before
+    @extend .loader
+
+*, *::before, *::after
+  box-sizing: border-box
+
+html, body
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+  font-size: var(--font-size)
+  color: var(--font-color)
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  margin: 0
+  padding: 0
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin: 1em 0
+
+p
+  margin: 1em 0
+
+.spacer
+  flex: 1
+
+a,
+a:visited,
+a:hover
+  color: var(--accent-color)
+  text-decoration: none
+
+a:hover
+  color: darken($accent-color, 10)
+
+input
+  font-size: var(--font-size)
+  color: var(--font-color)
+  appearance: none
+  border: 1px solid #e1e1e1
+  background: #f8f9fb
+  padding: .6em
+  height: 2.5em
+  border-radius: 3px
+  width: 100%
+
+  &:hover
+    background: white
+    border-color: #dadada
+
+  &:focus
+    outline-width: 2px
+    outline-color: var(--accent-color)
+    border-color: transparent!important
+    background: white
+
+  &.ng-touched.ng-invalid
+    background: white
+    border-color: var(--error-color)
+    outline-color: var(--error-color)
+
+  &:disabled
+    border: 1px solid #d0d0d0
+    background: #fafafa
+    &::placeholder
+      opacity: .4
+
+  &::placeholder
+    color: var(--font-color)
+    opacity: .8
+

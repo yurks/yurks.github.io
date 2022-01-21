@@ -1,0 +1,29 @@
+<div class="playground" *ngIf="fieldset$ | async as fields; else loading">
+
+  <div class="controls">
+    <app-control *ngFor="let field of fields" [title]="field.title" [attr.disabled]="field.disabled || null">
+      <input [type]="field.type" [id]="field.name" [name]="field.name"
+             [(ngModel)]="mainForm[field.name]" #model="ngModel"
+             [placeholder]="field.placeholder || ''"
+             [disabled]="!!field.disabled"
+             [required]="!!field.required"
+             [minlength]="field.minlength || null"
+             appForbiddenName="bob"
+      >
+
+      <app-control-validation when="required" [model]="model">Field is required</app-control-validation>
+      <app-control-validation when="minlength" [model]="model">Field should contain at least {{field.minlength}} characters</app-control-validation>
+    </app-control>
+  </div>
+
+  <div class="terminal">
+    <pre>{{mainForm | json}}</pre>
+  </div>
+
+</div>
+
+
+<ng-template #loading><div class="loading"></div></ng-template>
+
+
+

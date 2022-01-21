@@ -1,0 +1,26 @@
+.playground
+  display: flex
+  justify-content: space-between
+
+  & > *
+    width: 48%
+
+  @media (max-width: 767px)
+    flex-direction: column
+    & > *
+      width: 100%
+
+.terminal
+  margin: 2.5em 0 1em
+  border-radius: 6px
+  overflow: hidden
+  background-color: #777777
+
+.terminal pre
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace
+  height: 100%
+  color: white
+  padding: 1em
+  margin: 0
+  overflow-x: auto
+
